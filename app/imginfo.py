@@ -46,3 +46,26 @@ if image_details:
         print(f"{key}: {value}")
 else:
     print("Failed to get image details.")
+
+
+
+from PIL import Image
+
+def convert_to_binary(input_image_path, output_image_path, threshold=240):
+    # Open the image
+    img = Image.open(input_image_path)
+
+    # Convert the image to grayscale
+    img = img.convert('L')
+
+    # Apply thresholding to create a binary image
+    binary_img = img.point(lambda p: p > threshold and 255)
+
+    # Save the binary image
+    binary_img.save(output_image_path)
+
+# Example usage
+input_image_path = 'C:/Users/HP/Desktop/amol.jpg'
+output_image_path = 'C:/Users/HP/Desktop/binary.jpg'
+
+convert_to_binary(input_image_path, output_image_path)
