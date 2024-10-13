@@ -1,5 +1,5 @@
 
-image_path = 'C:/Users/HP/Desktop/amol.jpg'
+image_path = 'D:\\Photos\\2024\\FullSizeRender 6.JPG'
 
 from PIL import Image
 from PIL.ExifTags import TAGS
